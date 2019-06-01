@@ -9,7 +9,7 @@ class Card extends React.Component {
     return (
       <div className="card">
         <h4>{this.props.cardName}</h4>
-        <div className={this.props.type == "bar-chart" ? "show" : "hide"}>
+        <div className={this.props.type === "bar-chart" ? "show" : "hide"}>
           <BarChart />
         </div>
 

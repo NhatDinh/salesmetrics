@@ -79,7 +79,7 @@ class BarChart extends Component {
   render() {
     return (
       <div className="barchart-container">
-        <button className="btn" onClick={this.update}>
+        <button className="demo-btn" onClick={this.update}>
           DEMO
         </button>
         <div className="row">
@@ -94,27 +94,27 @@ class BarChart extends Component {
         </div>
         <style jsx>
           {`
-            .btn {
+            .demo-btn {
               cursor: pointer;
-              color: black;
+              color: #14f1d9;
               text-align: center;
               text-decoration: none;
               display: inline-block;
               font-size: 20px;
               border-radius: 12px;
               border: 1px solid black;
-              background-color: transparent;
+
               transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
               padding: 10px;
               font-weight: 700;
               border: none;
             }
 
-            .btn:hover {
+            .demo-btn:hover {
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
               transform: translateY(-10px);
-              color: black;
-              background-color: white;
+              color: white;
+              background-color: #14f1d9;
             }
           `}
         </style>
