@@ -59,7 +59,6 @@ class DonutChart extends Component {
     newSeries = this.state.series.map(s =>
       Math.floor(Math.random() * Math.floor(max))
     );
-    console.log("newSeries", newSeries);
     this.setState({
       series: newSeries
     });
