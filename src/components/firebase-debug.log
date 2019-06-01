@@ -1,0 +1,27 @@
+[debug] [2019-05-30T01:32:15.659Z] ----------------------------------------------------------------------
+[debug] [2019-05-30T01:32:15.660Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-05-30T01:32:15.661Z] CLI Version:   6.10.0
+[debug] [2019-05-30T01:32:15.661Z] Platform:      darwin
+[debug] [2019-05-30T01:32:15.661Z] Node Version:  v10.15.1
+[debug] [2019-05-30T01:32:15.662Z] Time:          Wed May 29 2019 18:32:15 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-05-30T01:32:15.662Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-30T01:32:15.672Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-30T01:32:15.672Z] > authorizing via signed-in user
+[debug] [2019-05-30T01:32:15.672Z] [iam] checking project salesmetrics-71cb5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-05-30T01:32:15.674Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-05-30T01:32:15.674Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-05-30T01:32:15.869Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-30T01:32:15.883Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/salesmetrics-71cb5:testIamPermissions  
+
+[debug] [2019-05-30T01:32:16.254Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-30T01:32:16.256Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/salesmetrics-71cb5  
+ 
+[debug] [2019-05-30T01:32:16.497Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'salesmetrics-71cb5'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-05-30T01:32:16.501Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/salesmetrics-71cb5/versions  
+

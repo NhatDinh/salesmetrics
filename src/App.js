@@ -4,50 +4,60 @@ import React from "react";
 import NavHeader from "../src/components/NavHeader";
 import Dashboard from "../src/components/Dashboard";
 
-function App() {
-  return (
-    <div className="is-dark bg-is-dark">
-      <NavHeader />
-      <Dashboard />
-      <style global jsx>{`
-        body {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-          margin: 0;
-          font-size: 20px;
-          -webkit-font-smoothing: antialiased;
-          background-color: black;
-          color: #586371;
-          height: 1000vh;
-        }
+class App extends React.Component {
+  render() {
+    return (
+      <div className="is-dark bg-is-dark">
+        <NavHeader />
+        <Dashboard />
 
-        .bg-is-dark {
-          background-color: black;
-        }
+        <style global jsx>{`
+          body {
+            font-family: avenir, proxima nova, helvetica neue, Helvetica, Arial,
+              sans-serif;
+            font-weight: 400;
+            margin: 0;
+            font-size: 20px;
+            -webkit-font-smoothing: antialiased;
+            background-color: black;
+            color: #586371;
+          }
 
-        .format-disabled {
-          text-decoration: none;
-          list-style: none;
-        }
+          .bg-is-dark {
+            background-color: black;
+          }
 
-        .hide {
-          display: none;
-        }
-        .show {
-          display: block;
-        }
+          .format-disabled {
+            text-decoration: none;
+            list-style: none;
+            color: white;
+          }
 
-        .m-container {
-          padding: 0px 40px;
-          min-width: 1000px;
-        }
+          .hide {
+            display: none;
+          }
+          .show {
+            display: block;
+          }
 
-        .sm-container {
-          padding: 0px 100px;
-        }
-      `}</style>
-    </div>
-  );
+          .m-container {
+            padding: 0px 40px;
+            min-width: 1000px;
+          }
+
+          .sm-container {
+            padding: 0px 100px;
+          }
+
+          .is-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        `}</style>
+      </div>
+    );
+  }
 }
 
 export default App;

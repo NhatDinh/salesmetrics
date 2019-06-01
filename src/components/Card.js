@@ -1,19 +1,15 @@
 import React from "react";
 
+import BarChart from "./BarChart";
 class Card extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div className="card">
         <h4>{this.props.cardName}</h4>
-        <h2>$ {this.props.money}</h2>
+        <BarChart />
+
         <style jsx>{`
           .card {
-            width: 300px;
-            height: 200px;
             position: relative;
             overflow: hidden;
             border-radius: 20px;
