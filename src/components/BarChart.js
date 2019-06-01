@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import { NONAME } from "dns";
 
 class BarChart extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class BarChart extends Component {
           type: "area",
           width: "500"
         },
-        colors: ["#FF00B2"],
+        colors: ["#14f1d9"],
         xaxis: {
           labels: {
             show: false
@@ -54,7 +53,7 @@ class BarChart extends Component {
 
       series: [
         {
-          name: "series-1",
+          name: "",
           data: [30, 40, 45, 50, 49, 60, 70, 91]
         }
       ]
@@ -97,7 +96,7 @@ class BarChart extends Component {
           {`
             .btn {
               cursor: pointer;
-              color: white;
+              color: black;
               text-align: center;
               text-decoration: none;
               display: inline-block;
@@ -108,6 +107,7 @@ class BarChart extends Component {
               transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
               padding: 10px;
               font-weight: 700;
+              border: none;
             }
 
             .btn:hover {

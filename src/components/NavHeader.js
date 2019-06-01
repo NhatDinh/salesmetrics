@@ -22,12 +22,13 @@ class NavHeader extends React.Component {
         <style jsx>{`
           .logo-wrapper h1 {
             font-family: Seravek;
-            color: white;
+            color: #14f1d9;
           }
 
           .nav-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            background-color: white;
           }
         `}</style>
       </div>

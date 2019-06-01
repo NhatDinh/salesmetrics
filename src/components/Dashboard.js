@@ -2,6 +2,7 @@ import React from "react";
 
 //import components
 import Card from "./Card";
+import { readFile } from "fs";
 
 class Dashboard extends React.Component {
   constructor() {
@@ -55,6 +56,13 @@ class Dashboard extends React.Component {
     this.getDataFromSheet(newUrl);
   };
 
+  //functions to compute data
+  getNetRevenue = (rec_rev, expenses, refunds) => {
+    let net_rev = 0;
+    net_rev = rec_rev - expenses - refunds;
+    console.log("NET REVENUE: ", net_rev);
+  };
+
   render() {
     return (
       <div className="dashboard-container">
@@ -67,16 +75,20 @@ class Dashboard extends React.Component {
           </div>
         </div>
         <div className="m-container">
-          <h2>Source: Stripe</h2>
+          <h2>
+            Source: <span className="txt-is-pink">Stripe</span>{" "}
+          </h2>
           <div className="cards-container ">
-            <Card cardName="recurring revenue" />
-            <Card cardName="expenses" />
-            <Card cardName="refunds" />
-            <Card cardName="net revenue" />
+            <Card cardName="recurring revenue" type="bar-chart" />
+            <Card cardName="expenses" type="bar-chart" />
+            <Card cardName="refunds" type="bar-chart" />
+            <Card cardName="net revenue" type="bar-chart" />
           </div>
         </div>
         <div className="m-container">
-          <h2>Source: Braintree</h2>
+          <h2>
+            Source: <span className="txt-is-pink">Braintree</span>
+          </h2>
           <div className="cards-container">
             <Card cardName="recurring revenue" />
             <Card cardName="expenses" />
@@ -86,7 +98,9 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="m-container">
-          <h2>Source: Recurly</h2>
+          <h2>
+            Source: <span className="txt-is-pink">Recurly</span>
+          </h2>
           <div className="cards-container">
             <Card cardName="recurring revenue" />
             <Card cardName="expenses" />
@@ -98,18 +112,18 @@ class Dashboard extends React.Component {
         <style jsx>{`
           .dashboard-container {
             min-width: 1200px;
-            background-color: #202020;
+            background-color: #f7f7fc;
             padding-bottom: 30px;
           }
 
           .cards-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 10px;
+            grid-gap: 30px;
           }
 
           .dashboard-header {
-            background-color: rgba(255, 0, 178, 0.5);
+            background-color: #14f1d9;
             color: white;
             display: grid;
             grid-template-columns: repeat(2, 1fr);

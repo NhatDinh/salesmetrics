@@ -19,8 +19,7 @@ class App extends React.Component {
             margin: 0;
             font-size: 20px;
             -webkit-font-smoothing: antialiased;
-            background-color: black;
-            color: #586371;
+            background-color: white;
           }
 
           .bg-is-dark {
