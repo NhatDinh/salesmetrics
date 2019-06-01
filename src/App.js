@@ -53,6 +53,29 @@ class App extends React.Component {
             justify-content: center;
             align-items: center;
           }
+
+          .demo-btn {
+            cursor: pointer;
+            color: #14f1d9;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 12px;
+            border: 1px solid black;
+
+            transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            padding: 10px;
+            font-weight: 700;
+            border: none;
+          }
+
+          .demo-btn:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-10px);
+            color: white;
+            background-color: #14f1d9;
+          }
         `}</style>
       </div>
     );

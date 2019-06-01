@@ -83,6 +83,8 @@ class Dashboard extends React.Component {
             <Card cardName="expenses" type="bar-chart" />
             <Card cardName="refunds" type="bar-chart" />
             <Card cardName="net revenue" type="bar-chart" />
+            <Card cardName="user churn" type="donut-chart" />
+            <Card cardName="revenue churn" type="donut-chart" />
           </div>
         </div>
         <div className="m-container">
@@ -90,10 +92,12 @@ class Dashboard extends React.Component {
             Source: <span className="txt-is-pink">Braintree</span>
           </h2>
           <div className="cards-container">
-            <Card cardName="recurring revenue" />
-            <Card cardName="expenses" />
-            <Card cardName="refunds" />
-            <Card cardName="net revenue" />
+            <Card cardName="recurring revenue" type="bar-chart" />
+            <Card cardName="expenses" type="bar-chart" />
+            <Card cardName="refunds" type="bar-chart" />
+            <Card cardName="net revenue" type="bar-chart" />
+            <Card cardName="user churn" type="donut-chart" />
+            <Card cardName="revenue churn" type="donut-chart" />
           </div>
         </div>
 
@@ -102,10 +106,12 @@ class Dashboard extends React.Component {
             Source: <span className="txt-is-pink">Recurly</span>
           </h2>
           <div className="cards-container">
-            <Card cardName="recurring revenue" />
-            <Card cardName="expenses" />
-            <Card cardName="refunds" />
-            <Card cardName="net revenue" />
+            <Card cardName="recurring revenue" type="bar-chart" />
+            <Card cardName="expenses" type="bar-chart" />
+            <Card cardName="refunds" type="bar-chart" />
+            <Card cardName="net revenue" type="bar-chart" />
+            <Card cardName="user churn" type="donut-chart" />
+            <Card cardName="revenue churn" type="donut-chart" />
           </div>
         </div>
 

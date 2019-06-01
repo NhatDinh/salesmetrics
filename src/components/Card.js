@@ -1,6 +1,8 @@
 import React from "react";
 
 import BarChart from "./BarChart";
+import DonutChart from "./DonutChart";
+
 class Card extends React.Component {
   constructor() {
     super();
@@ -12,11 +14,9 @@ class Card extends React.Component {
         <div className={this.props.type === "bar-chart" ? "show" : "hide"}>
           <BarChart />
         </div>
-
-        {/*
-        <DonutChart
-          className={this.props.chartType == "donut" ? "show" : "hide"}
-        />*/}
+        <div className={this.props.type === "donut-chart" ? "show" : "hide"}>
+          <DonutChart />
+        </div>
 
         <style jsx>{`
           .card {
@@ -30,6 +30,7 @@ class Card extends React.Component {
             padding: 10px 20px;
             color: black;
             background-color: white;
+            min-width: 600px;
           }
 
           .card h4 {
