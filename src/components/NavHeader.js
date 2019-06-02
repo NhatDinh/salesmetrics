@@ -26,8 +26,6 @@ class NavHeader extends React.Component {
           }
 
           .nav-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
             background-color: white;
             min-width: 1200px;
           }

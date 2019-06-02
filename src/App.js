@@ -23,10 +23,6 @@ class App extends React.Component {
             min-width: 1200px;
           }
 
-          .bg-is-dark {
-            background-color: black;
-          }
-
           .format-disabled {
             text-decoration: none;
             list-style: none;
