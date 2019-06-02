@@ -199,6 +199,8 @@ class Dashboard extends React.Component {
             padding: 12px 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            width: 200px;
+            height: 30px;
           }
 
           .submit-btn {
@@ -206,11 +208,11 @@ class Dashboard extends React.Component {
             color: white;
             text-align: center;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 22px;
             border-radius: 12px;
             background-color: transparent;
             transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             margin-left: 5px;
           }
