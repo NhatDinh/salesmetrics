@@ -7,10 +7,7 @@ class DonutChart extends Component {
 
     this.state = {
       options: {
-        labels: [
-          "Cancelled Customers last 30 days",
-          "Active Customers last 30 days"
-        ],
+        labels: ["Cancelled last 30 days", "Active last 30 days"],
         colors: ["#FF004D", "#14f1d9"],
         plotOptions: {
           pie: {
@@ -36,7 +33,7 @@ class DonutChart extends Component {
                 show: true,
                 total: {
                   show: true,
-                  label: "Active Customers 30 days ago",
+                  label: "Active 30 days ago",
                   color: "#14f1d9",
                   formatter: function(w) {
                     return w.globals.seriesTotals.reduce((a, b) => {
@@ -74,7 +71,8 @@ class DonutChart extends Component {
           options={this.state.options}
           series={this.state.series}
           type="donut"
-          width="650"
+          width="500"
+          size="10px"
         />
         <style jsx>{``}</style>
       </div>

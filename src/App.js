@@ -20,6 +20,7 @@ class App extends React.Component {
             font-size: 20px;
             -webkit-font-smoothing: antialiased;
             background-color: white;
+            min-width: 1200px;
           }
 
           .bg-is-dark {
@@ -39,9 +40,21 @@ class App extends React.Component {
             display: block;
           }
 
+          .hide-w-opacity {
+            opacity: 0;
+          }
+
+          .show-w-opacity {
+            opacity: 1;
+          }
+
+          .animated-transition {
+            transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+
           .m-container {
             padding: 0px 40px;
-            min-width: 1000px;
+            min-width: 1200px;
           }
 
           .sm-container {
@@ -63,7 +76,6 @@ class App extends React.Component {
             font-size: 20px;
             border-radius: 12px;
             border: 1px solid black;
-
             transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
             padding: 10px;
             font-weight: 700;

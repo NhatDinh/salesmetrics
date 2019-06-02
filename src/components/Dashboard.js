@@ -8,7 +8,9 @@ class Dashboard extends React.Component {
   constructor() {
     super();
     this.state = {
-      object: ""
+      showSheetInput: false,
+      inputPlaceholder: "Google Sheet ID",
+      inputVal: ""
     };
   }
 
@@ -63,13 +65,49 @@ class Dashboard extends React.Component {
     console.log("NET REVENUE: ", net_rev);
   };
 
+  //handle input
+  getSheetID = event => {
+    event.preventDefault();
+    console.log("sheet ID:", this.state.inputVal);
+  };
+
+  toggleSheetInput = () => {
+    this.setState({ showSheetInput: !this.state.showSheetInput });
+  };
+
+  handleChange = event => {
+    this.setState({ inputVal: event.target.value });
+  };
+
   render() {
     return (
       <div className="dashboard-container">
-        <div className="dashboard-header m-container">
-          <h2>DASHBOARD</h2>
-          <div className="upload-btn-wrapper">
-            <button className="upload-btn" onClick={this.uploadSheet}>
+        <div className="m-container dashboard-header">
+          <div>
+            <h2>DASHBOARD</h2>
+          </div>
+          <div
+            className={
+              this.state.showSheetInput
+                ? "show-w-opacity is-center animated-transition"
+                : "hide-w-opacity is-center animated-transition"
+            }
+          >
+            <form onSubmit={this.getSheetID}>
+              <label>
+                <input
+                  type="text"
+                  className="input"
+                  placeholder={this.state.inputPlaceholder}
+                  value={this.state.inputVal}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <input type="submit" value="Submit" className="submit-btn" />
+            </form>
+          </div>
+          <div className="is-center">
+            <button className="action-btn" onClick={this.toggleSheetInput}>
               UPLOAD YOUR SHEET
             </button>
           </div>
@@ -78,7 +116,7 @@ class Dashboard extends React.Component {
           <h2>
             Source: <span className="txt-is-pink">Stripe</span>{" "}
           </h2>
-          <div className="cards-container ">
+          <div className="cards-container">
             <Card cardName="recurring revenue" type="bar-chart" />
             <Card cardName="expenses" type="bar-chart" />
             <Card cardName="refunds" type="bar-chart" />
@@ -117,25 +155,25 @@ class Dashboard extends React.Component {
 
         <style jsx>{`
           .dashboard-container {
-            min-width: 1200px;
             background-color: #f7f7fc;
             padding-bottom: 30px;
+            min-width: 1200px;
           }
 
           .cards-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 30px;
+            grid-gap: 10px;
           }
 
           .dashboard-header {
             background-color: #14f1d9;
             color: white;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
 
-          .upload-btn {
+          .action-btn {
             cursor: pointer;
             color: white;
             text-align: center;
@@ -150,17 +188,34 @@ class Dashboard extends React.Component {
             border: none;
           }
 
-          .upload-btn:hover {
+          .action-btn:hover {
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
             transform: translateY(-10px);
             color: black;
             background-color: white;
           }
 
-          .upload-btn-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          .input {
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+
+          .submit-btn {
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 12px;
+            background-color: transparent;
+            transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            font-weight: 600;
+            border: none;
+            margin-left: 5px;
+          }
+          .submit-btn:hover {
+            transform: scale(1.3);
           }
         `}</style>
       </div>

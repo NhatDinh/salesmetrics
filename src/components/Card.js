@@ -30,7 +30,7 @@ class Card extends React.Component {
             padding: 10px 20px;
             color: black;
             background-color: white;
-            min-width: 600px;
+            min-width: 550px;
           }
 
           .card h4 {
