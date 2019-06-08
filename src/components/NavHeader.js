@@ -13,12 +13,6 @@ class NavHeader extends React.Component {
             <h1>salesmetrics</h1>
           </a>
         </div>
-        {/*
-        <div className="is-center">
-          <a href="/" className="format-disabled">
-            HOW IT WORKS ⁉️
-          </a>
-        </div> */}
         <style jsx>{`
           .logo-wrapper h1 {
             font-family: Seravek;

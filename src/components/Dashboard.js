@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 //import components
 import Card from "./Card";
@@ -10,7 +11,8 @@ class Dashboard extends React.Component {
     this.state = {
       showSheetInput: false,
       inputPlaceholder: "Google Sheet ID",
-      inputVal: ""
+      inputVal: "",
+      currentSheetID: ""
     };
   }
 
@@ -42,13 +44,9 @@ class Dashboard extends React.Component {
       });
   };
 
-  componentDidMount() {
-    //hide API key, not working tho
-    //const API_KEY = `${process.env.API_KEY}`;
-    const API_KEY = "AIzaSyAk0svS0tjBgrZ4ywig4RY9wd3rrhGBaig";
+  componentWillMount() {
     const initSheetID = "1sCgmzBIq2K9jUckLuYSWbDq4CuNUfdtuE6a5xI3I5Hw";
-    const initUrl = `https://sheets.googleapis.com/v4/spreadsheets/${initSheetID}/values:batchGet?ranges=Sheet1&majorDimension=ROWS&key=${API_KEY}`;
-    this.getDataFromSheet(initUrl);
+    this.setState({ currentSheetID: initSheetID });
   }
 
   uploadSheet = url => {
@@ -65,10 +63,10 @@ class Dashboard extends React.Component {
     console.log("NET REVENUE: ", net_rev);
   };
 
-  //handle input
-  getSheetID = event => {
+  handleSubmit = event => {
     event.preventDefault();
-    console.log("sheet ID:", this.state.inputVal);
+    const input = this.state.inputVal;
+    this.setState({ currentSheetID: input });
   };
 
   toggleSheetInput = () => {
@@ -78,6 +76,10 @@ class Dashboard extends React.Component {
   handleChange = event => {
     this.setState({ inputVal: event.target.value });
   };
+
+  componentDidUpdate() {
+    console.log("updated state: ", this.state);
+  }
 
   render() {
     return (
@@ -93,7 +95,7 @@ class Dashboard extends React.Component {
                 : "hide-w-opacity is-center animated-transition"
             }
           >
-            <form onSubmit={this.getSheetID}>
+            <form onSubmit={this.handleSubmit}>
               <label>
                 <input
                   type="text"
@@ -113,6 +115,10 @@ class Dashboard extends React.Component {
           </div>
         </div>
         <div className="m-container">
+          <h2>
+            Current Sheet ID:
+            <span className="sheetID-wrapper">{this.state.currentSheetID}</span>
+          </h2>
           <h2>
             Source: <span className="txt-is-pink">Stripe</span>{" "}
           </h2>
@@ -203,6 +209,10 @@ class Dashboard extends React.Component {
             height: 30px;
           }
 
+          .sheetID-wrapper {
+            color: #14f1d9;
+            padding-left: 10px;
+          }
           .submit-btn {
             cursor: pointer;
             color: white;
