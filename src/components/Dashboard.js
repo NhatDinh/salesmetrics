@@ -1,9 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 //import components
 import Card from "./Card";
-import { readFile } from "fs";
 
 class Dashboard extends React.Component {
   constructor() {
